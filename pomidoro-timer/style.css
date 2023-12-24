@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("assets/fonts/bebasneue-book-webfont.woff2") format("woff2"),
+    url("assets/fonts/bebasneue-book-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("assets/fonts/Montserrat-Regular.woff") format("woff");
+}
+
+body {
+  font-family: "Bebas Neue", "Roboto", "Arial", sans-serif;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #2B2A30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  background: radial-gradient(71.42% 71.42% at 51.7% 28.6%, #3A393F 0%, #17171A 100%);
+  border: 9px solid #00aa51;
+  box-shadow: 5px -16px 50px 0px rgba(255, 255, 255, 0.15), -5px 14px 44px 0px #000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.timer-clock {
+  display: flex;
+  gap: 10px;
+  font-size: 196px;
+  font-weight: 400;
+  color: #FFF;
+  line-height: normal;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-start {
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Montserrat", "Roboto", "Arial", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 9.6px;
+  color: #fff;
+}
