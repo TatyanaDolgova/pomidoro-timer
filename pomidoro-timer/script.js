@@ -20,21 +20,22 @@ const startTimer = () => {
   }
   countSeconds = minV * 60 + secV;
 
-  timerId = setInterval(() => {
-    countSeconds--;
-    minutes.value = Math.floor(countSeconds / 60);
-    seconds.value = countSeconds % 60;
-    if (minutes.value.length < 2) {
-      minutes.value = '0' + minutes.value;
-    }
-    if (seconds.value.length < 2) {
-      seconds.value = '0' + seconds.value;
-    }
-    if (countSeconds <= 0) {
-      clearsInterval();
-    }
-  }, 1000)
-
+  if (countSeconds > 0) {
+    timerId = setInterval(() => {
+      countSeconds--;
+      minutes.value = Math.floor(countSeconds / 60);
+      seconds.value = countSeconds % 60;
+      if (minutes.value.length < 2) {
+        minutes.value = '0' + minutes.value;
+      }
+      if (seconds.value.length < 2) {
+        seconds.value = '0' + seconds.value;
+      }
+      if (countSeconds <= 0) {
+        clearsInterval();
+      }
+    }, 1000)
+  }
 }
 
 function clearsInterval() {
@@ -48,10 +49,12 @@ function clearsInterval() {
 const actionStart = () => {
   const btnStart = document.querySelector('.btn-start');
   const inputs = document.querySelectorAll('input');
+  const clock = document.querySelector('.timer');
 
   btnStart.addEventListener('click', () => {
     if (btnStart.textContent === 'START') {
       btnStart.textContent = 'PAUSE';
+      clock.style.borderColor = '#00aa51';
       startTimer();
       inputs.forEach((input) => {
         input.setAttribute('readonly', true);

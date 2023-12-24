@@ -49,6 +49,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 25px;
+
+  @media (max-width: 550px) {
+    width: calc(100vw - 50px);
+    height: calc(100vw - 50px);
+  }
 }
 
 .timer-clock {
@@ -59,6 +64,14 @@ body {
   line-height: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FFF;
+
+  @media (max-width: 550px) {
+    font-size: 150px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 120px;
+  }
 }
 
 .timer-clock input {
@@ -71,6 +84,14 @@ body {
   margin: 0;
   border: none;
   color: #FFF;
+
+  @media (max-width: 550px) {
+    max-width: 120px;
+  }
+
+  @media (max-width: 400px) {
+    max-width: 100px;
+  }
 }
 
 .timer-clock input:focus {
